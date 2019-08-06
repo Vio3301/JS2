@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+     var that = this;
+   var page ={   // acest obiect corespunde unei pagine
+         url: "https://learn.javascript.ru/",
+         title:"Современный учебник JavaScript",
+         content:`Здесь вы можете изучить JavaScript, начиная с нуля и заканчивая продвинутыми концепциями вроде ООП.
+         Мы будем использовать браузер в качестве окружения, но основное внимание будет уделяться именно самому языку JavaScript.`,
+        
+         style:{
+         color: "white",
+         backgroundColor:"#3f3f3f"
+         },
+
+      render: function(){
+        that = this;
+          document.write(
+           `<div style="padding:20px; background-color:${this.style.backgroundColor};
+           color:${this.style.color};">
+               <h2>${page.title}</h2>
+               <p>${page.content}</p>
+               <button style="border-raudius" onclick="that.open()">read more</button>
+           </div>
+          `)
+      },
+      ///deschide url indecat
+      open: function(){
+         location= this.url;
+      }
+    }
+    page.render()
+    
+
+    </script>
+</body>
+</html>
